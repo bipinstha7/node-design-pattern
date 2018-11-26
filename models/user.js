@@ -22,11 +22,12 @@ const userSchema = new mongoose.Schema({
 		required: true,
 		minlength: 5,
 		maxlength: 1024
-	}
+	},
+	isAdmin: Boolean
 })
 
 userSchema.methods.generateAuthToken = function() {
-	const token = jwt.sign({ _id: this._id }, keys.jwtPrivateKey)
+	const token = jwt.sign({ _id: this._id, isAdmin: this.isAdmin }, keys.jwtPrivateKey)
 	return token
 }
 
@@ -44,7 +45,8 @@ function validateUser(user) {
 		password: Joi.string()
 			.min(5)
 			.max(255) // user sends the plane text which can be hold by 255 character and that plane text will be hashed and store which can be hold by 1024
-			.required()
+			.required(),
+		isAdmin: Joi.boolean()
 	}
 
 	return Joi.validate(user, schema)
