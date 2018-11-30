@@ -26,16 +26,16 @@ const userSchema = new mongoose.Schema({
 function validateUser(user) {
 	const schema = {
 		name: Joi.string()
-			.min(3)
+			.min(5)
 			.max(50)
 			.required(),
 		email: Joi.string()
-			.min(3)
+			.min(5)
 			.max(255)
 			.required()
 			.email(),
 		password: Joi.string()
-			.min(3)
+			.min(5)
 			.max(255) // user sends the plane text which can be hold by 255 character and that plane text will be hashed and store which can be hold by 1024
 			.required()
 	}
