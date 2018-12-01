@@ -34,7 +34,7 @@ function validateUser(user) {
 			.max(255)
 			.required()
 			.email(),
-		passsword: Joi.string()
+		password: Joi.string()
 			.min(3)
 			.max(255) // user sends the plane text which can be hold by 255 character and that plane text will be hashed and store which can be hold by 1024
 			.required()
