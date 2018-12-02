@@ -5,7 +5,7 @@ Joi.objectId = require('joi-objectid')(Joi)
 
 const genres = require('./routes/genres')
 const customers = require('./routes/customers')
-const movie = require('./routes/movie')
+const movie = require('./routes/movies')
 const rentals = require('./routes/rentals')
 const users = require('./routes/users')
 
