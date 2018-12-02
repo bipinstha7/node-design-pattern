@@ -17,6 +17,7 @@
 	},
 	"homepage": "https://github.com/bipinstha7/node-design-pattern#readme",
 	"dependencies": {
+		"bcrypt": "^3.0.4",
 		"express": "^4.16.4",
 		"fawn": "^2.1.5",
 		"joi": "^14.3.1",
