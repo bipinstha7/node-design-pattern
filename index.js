@@ -7,7 +7,9 @@ const customers = require('./routes/customers')
 const app = express()
 
 mongoose
-	.connect('mongodb://design:design1@ds361085.mlab.com:61085/node-design-pattern')
+	.connect('mongodb://design:design1@ds361085.mlab.com:61085/node-design-pattern', {
+		useNewUrlParser: true
+	})
 	.then(() => console.log('Connected to MongoDB...'))
 	.catch(err => console.error('Could not connect to MongoDB...'))
 
