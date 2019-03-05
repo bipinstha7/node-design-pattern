@@ -1,7 +1,14 @@
-const Joi = require('joi')
-const genres = require('./routes/genres')
 const express = require('express')
+const mongoose = require('mongoose')
+
+const genres = require('./routes/genres')
+
 const app = express()
+
+mongoose
+	.connect('mongodb://design:design1@ds361085.mlab.com:61085/node-design-pattern')
+	.then(() => console.log('Connected to MongoDB...'))
+	.catch(err => console.error('Could not connect to MongoDB...'))
 
 app.use(express.json())
 app.use('/api/genres', genres)
