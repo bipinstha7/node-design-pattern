@@ -1,0 +1,19 @@
+{
+  "name": "design-pattern",
+  "version": "1.0.0",
+  "description": "node design pattern ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bipinstha7/node-design-pattern.git"
+  },
+  "author": "bipin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bipinstha7/node-design-pattern/issues"
+  },
+  "homepage": "https://github.com/bipinstha7/node-design-pattern#readme"
+}
