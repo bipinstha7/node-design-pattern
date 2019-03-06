@@ -18,7 +18,9 @@
   "homepage": "https://github.com/bipinstha7/node-design-pattern#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "fawn": "^2.1.5",
     "joi": "^14.3.1",
+    "joi-objectid": "^2.0.0",
     "mongoose": "^5.4.17"
   }
 }
