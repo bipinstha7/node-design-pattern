@@ -1,26 +1,26 @@
 {
-  "name": "design-pattern",
-  "version": "1.0.0",
-  "description": "node design pattern ",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bipinstha7/node-design-pattern.git"
-  },
-  "author": "bipin",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bipinstha7/node-design-pattern/issues"
-  },
-  "homepage": "https://github.com/bipinstha7/node-design-pattern#readme",
-  "dependencies": {
-    "express": "^4.16.4",
-    "fawn": "^2.1.5",
-    "joi": "^14.3.1",
-    "joi-objectid": "^2.0.0",
-    "mongoose": "^5.4.17"
-  }
+	"name": "design-pattern",
+	"version": "1.0.0",
+	"description": "node design pattern ",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bipinstha7/node-design-pattern.git"
+	},
+	"author": "bipin",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/bipinstha7/node-design-pattern/issues"
+	},
+	"homepage": "https://github.com/bipinstha7/node-design-pattern#readme",
+	"dependencies": {
+		"express": "^4.16.4",
+		"fawn": "^2.1.5",
+		"joi": "^14.3.1",
+		"joi-objectid": "^2.0.0",
+		"mongoose": "^5.4.17"
+	}
 }
