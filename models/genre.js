@@ -24,5 +24,6 @@ const Genre = mongoose.model('Genre', genreSchema)
 
 module.exports = {
     Genre,
+    genreSchema,
     validate: validateGenre
 }
