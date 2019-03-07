@@ -1,4 +1,4 @@
-const logger = require('./logging.js/index.js')
+const logger = require('./logging.js')
 
 module.exports = (err, req, res, next) => {
 	logger.log({
