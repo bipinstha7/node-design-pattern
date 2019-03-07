@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcrypt')
 const Joi = require('joi')
-const jwt = require('jsonwebtoken')
-const config = require('config')
 
 const { User } = require('../models/user')
 
@@ -21,7 +19,8 @@ router.post('/', async (req, res) => {
 
 		if (!validPassword) return res.status(400).send('Invalide email or password')
 
-        const token = jwt.sign({_id: user._id}, config.get('jwtPrivateKey'))
+		// generateAuthToken method has been created at user model
+		const token = user.generateAuthToken()
 
 		res.send(token)
 	} catch (error) {
