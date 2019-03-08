@@ -9,6 +9,14 @@ const logger = createLogger({
 	transports: [new transports.Console(), new transports.File({ filename: 'logger.log', level: 'error' })]
 })
 
+process.on('uncaughtException', ex => {
+	logger.log({
+		level: 'error',
+		message: ex.message,
+		meta: ex
+	})
+})
+
 logger.add(
 	new transports.MongoDB({
 		db: keys.mongoURI,
