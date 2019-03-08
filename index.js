@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Joi = require('joi')
 Joi.objectId = require('joi-objectid')(Joi)
+require('express-async-errors') // handles async operation with try-catch block without explicitely using try-catch block
 
 const genres = require('./routes/genres')
 const customers = require('./routes/customers')
@@ -10,6 +11,7 @@ const rentals = require('./routes/rentals')
 const users = require('./routes/users')
 const auth = require('./routes/auth')
 const keys = require('./config/keys')
+const error = require('./middleware/error')
 
 const app = express()
 
@@ -25,6 +27,7 @@ app.use('/api/movie', movie)
 app.use('/api/rentals', rentals)
 app.use('/api/users', users)
 app.use('/api/auth', auth)
+app.use(error)
 
 const port = process.env.PORT || 3000
 app.listen(port, () => console.log(`Listening on port ${port}...`))
