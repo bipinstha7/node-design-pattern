@@ -5,14 +5,23 @@ const { Genre, validate } = require('../models/genre')
 const auth = require('../middleware/auth')
 const admin = require('../middleware/admin')
 
-router.get('/', async (req, res) => {
-	try {
+function asyncMiddleware(handler) {
+	return async (req, res, next) => {
+		try {
+			await handler(req, res)
+		} catch (error) {
+			next(error)
+		}
+	}
+}
+
+router.get(
+	'/',
+	asyncMiddleware(async (req, res) => {
 		const genres = await Genre.find().sort('name')
 		res.send(genres)
-	} catch (error) {
-		res.send(error)
-	}
-})
+	})
+)
 
 router.post('/', auth, async (req, res) => {
 	const { error } = validate(req.body)
@@ -23,7 +32,7 @@ router.post('/', auth, async (req, res) => {
 		await genre.save()
 		res.send(genre)
 	} catch (error) {
-		res.send(error)
+		res.status(500).send('Something Failed.')
 	}
 })
 
@@ -38,7 +47,7 @@ router.put('/:id', async (req, res) => {
 
 		res.send(genre)
 	} catch (error) {
-		res.send(error)
+		res.status(500).send('Something Failed.')
 	}
 })
 
@@ -50,7 +59,7 @@ router.delete('/:id', [auth, admin], async (req, res) => {
 
 		res.send(genre)
 	} catch (error) {
-		res.send(error)
+		res.status(500).send('Something Failed.')
 	}
 })
 
@@ -62,7 +71,7 @@ router.get('/:id', async (req, res) => {
 
 		res.send(genre)
 	} catch (error) {
-		res.send(error)
+		res.status(500).send('Something Failed.')
 	}
 })
 
