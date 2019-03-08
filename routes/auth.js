@@ -9,23 +9,19 @@ router.post('/', async (req, res) => {
 	const { error } = validate(req.body)
 	if (error) return res.status(400).send(error.details[0].message)
 
-	try {
-		const { email, password } = req.body
-		let user = await User.findOne({ email })
+	const { email, password } = req.body
+	let user = await User.findOne({ email })
 
-		if (!user) return res.status(400).send('Invalide email or password')
+	if (!user) return res.status(400).send('Invalide email or password')
 
-		const validPassword = await bcrypt.compare(password, user.password)
+	const validPassword = await bcrypt.compare(password, user.password)
 
-		if (!validPassword) return res.status(400).send('Invalide email or password')
+	if (!validPassword) return res.status(400).send('Invalide email or password')
 
-		// generateAuthToken method has been created at user model
-		const token = user.generateAuthToken()
+	// generateAuthToken method has been created at user model
+	const token = user.generateAuthToken()
 
-		res.send(token)
-	} catch (error) {
-		res.send(error)
-	}
+	res.send(token)
 })
 
 function validate(req) {

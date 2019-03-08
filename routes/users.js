@@ -15,36 +15,32 @@ router.post('/', async (req, res) => {
 	const { error } = validate(req.body)
 	if (error) return res.status(400).send(error.details[0].message)
 
-	try {
-		let user = await User.findOne({ email: req.body.email })
+	let user = await User.findOne({ email: req.body.email })
 
-		if (user) return res.status(400).send('User already registered.')
+	if (user) return res.status(400).send('User already registered.')
 
-		const { name, email, password, isAdmin } = req.body
+	const { name, email, password, isAdmin } = req.body
 
-		user = new User({
-			name,
-			email,
-			password,
-			isAdmin
-		})
+	user = new User({
+		name,
+		email,
+		password,
+		isAdmin
+	})
 
-		const salt = await bcrypt.genSalt(10)
-		user.password = await bcrypt.hash(user.password, salt)
+	const salt = await bcrypt.genSalt(10)
+	user.password = await bcrypt.hash(user.password, salt)
 
-		await user.save()
+	await user.save()
 
-		// generateAuthToken method has been created at user model
-		const token = user.generateAuthToken()
+	// generateAuthToken method has been created at user model
+	const token = user.generateAuthToken()
 
-		res.header('x-auth-token', token).send({
-			_id: user._id,
-			name: user.name,
-			email: user.email
-		})
-	} catch (error) {
-		res.send(error)
-	}
+	res.header('x-auth-token', token).send({
+		_id: user._id,
+		name: user.name,
+		email: user.email
+	})
 })
 
 module.exports = router
