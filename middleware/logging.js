@@ -9,22 +9,30 @@ const logger = createLogger({
 	transports: [new transports.Console(), new transports.File({ filename: 'logger.log', level: 'error' })]
 })
 
-process.on('uncaughtException', ex => {
-	logger.log({
-		level: 'error',
-		message: ex.message,
-		meta: ex
-	})
-	process.exit(1)
-})
+// process.on('uncaughtException', ex => {
+// 	logger.log({
+// 		level: 'error',
+// 		message: ex.message,
+// 		meta: ex
+// 	})
+// 	process.exit(1)
+// })
+
+/* It'll catch both uncaughtException and unhandledRejection */
+logger.exceptions.handle(
+	new transports.File({ filename: 'exceptions.log' })
+  )
 
 process.on('unhandledRejection', ex => {
-	logger.log({
-		level: 'error',
-		message: ex.message,
-		meta: ex
-	})
-	process.exit(1)
+	// logger.log({
+	// 	level: 'error',
+	// 	message: ex.message,
+	// 	meta: ex
+	// })
+	// process.exit(1)
+
+	/* throw exception and it'll be caught by logger.exception.handle */
+	throw ex
 })
 
 logger.add(
