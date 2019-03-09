@@ -15,6 +15,16 @@ process.on('uncaughtException', ex => {
 		message: ex.message,
 		meta: ex
 	})
+	process.exit(1)
+})
+
+process.on('unhandledRejection', ex => {
+	logger.log({
+		level: 'error',
+		message: ex.message,
+		meta: ex
+	})
+	process.exit(1)
 })
 
 logger.add(
