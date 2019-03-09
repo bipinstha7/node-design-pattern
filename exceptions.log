@@ -1,0 +1,87 @@
+{ error:
+   Error: Promise Rejection
+       at Object.<anonymous> (/media/madrio/media/Code/Node/Mosh Hamedani/node-design-pattern/index.js:18:26)
+       at Module._compile (internal/modules/cjs/loader.js:799:30)
+       at Object.Module._extensions..js (internal/modules/cjs/loader.js:810:10)
+       at Module.load (internal/modules/cjs/loader.js:666:32)
+       at tryModuleLoad (internal/modules/cjs/loader.js:606:12)
+       at Function.Module._load (internal/modules/cjs/loader.js:598:3)
+       at Function.Module.runMain (internal/modules/cjs/loader.js:862:12)
+       at internal/main/run_main_module.js:21:11,
+  level: 'error',
+  message:
+   'uncaughtException: Promise Rejection\nError: Promise Rejection\n    at Object.<anonymous> (/media/madrio/media/Code/Node/Mosh Hamedani/node-design-pattern/index.js:18:26)\n    at Module._compile (internal/modules/cjs/loader.js:799:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:810:10)\n    at Module.load (internal/modules/cjs/loader.js:666:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:606:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:598:3)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:862:12)\n    at internal/main/run_main_module.js:21:11',
+  stack:
+   'Error: Promise Rejection\n    at Object.<anonymous> (/media/madrio/media/Code/Node/Mosh Hamedani/node-design-pattern/index.js:18:26)\n    at Module._compile (internal/modules/cjs/loader.js:799:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:810:10)\n    at Module.load (internal/modules/cjs/loader.js:666:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:606:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:598:3)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:862:12)\n    at internal/main/run_main_module.js:21:11',
+  exception: true,
+  date: 'Sat Mar 09 2019 09:45:55 GMT+0545 (Nepal Time)',
+  process:
+   { pid: 10439,
+     uid: 1000,
+     gid: 1000,
+     cwd:
+      '/media/madrio/media/Code/Node/Mosh Hamedani/node-design-pattern',
+     execPath: '/usr/bin/node',
+     version: 'v11.11.0',
+     argv:
+      [ '/usr/bin/node',
+        '/media/madrio/media/Code/Node/Mosh Hamedani/node-design-pattern/index.js' ],
+     memoryUsage:
+      { rss: 71815168,
+        heapTotal: 39022592,
+        heapUsed: 23734728,
+        external: 18663097 } },
+  os:
+   { loadavg: [ 0.63623046875, 0.68310546875, 0.80517578125 ],
+     uptime: 3851 },
+  trace:
+   [ { column: 26,
+       file:
+        '/media/madrio/media/Code/Node/Mosh Hamedani/node-design-pattern/index.js',
+       function: null,
+       line: 18,
+       method: null,
+       native: false },
+     { column: 30,
+       file: 'internal/modules/cjs/loader.js',
+       function: 'Module._compile',
+       line: 799,
+       method: '_compile',
+       native: false },
+     { column: 10,
+       file: 'internal/modules/cjs/loader.js',
+       function: 'Module._extensions..js',
+       line: 810,
+       method: '.js',
+       native: false },
+     { column: 32,
+       file: 'internal/modules/cjs/loader.js',
+       function: 'Module.load',
+       line: 666,
+       method: 'load',
+       native: false },
+     { column: 12,
+       file: 'internal/modules/cjs/loader.js',
+       function: 'tryModuleLoad',
+       line: 606,
+       method: null,
+       native: false },
+     { column: 3,
+       file: 'internal/modules/cjs/loader.js',
+       function: 'Module._load',
+       line: 598,
+       method: '_load',
+       native: false },
+     { column: 12,
+       file: 'internal/modules/cjs/loader.js',
+       function: 'Module.runMain',
+       line: 862,
+       method: 'runMain',
+       native: false },
+     { column: 11,
+       file: 'internal/main/run_main_module.js',
+       function: null,
+       line: 21,
+       method: null,
+       native: false } ],
+  timestamp: '2019-03-09T04:00:55.285Z' }
