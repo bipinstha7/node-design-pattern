@@ -1,5 +1,10 @@
 const express = require('express')
-require('express-async-errors') // handles async operation with try-catch block without explicitely using try-catch block
+
+/**
+ * handles async operation with try-catch block 
+ * without explicitely using try-catch block
+*/
+require('express-async-errors') 
 
 const app = express()
 
