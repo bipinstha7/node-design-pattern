@@ -39,6 +39,7 @@ router.post('/', async (req, res) => {
 	})
 
 	try {
+		/* Fawn has used for transaction */
 		new Fawn.Task()
 			.save('rentals', rental)
 			.update(
