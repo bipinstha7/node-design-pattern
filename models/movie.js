@@ -2,6 +2,7 @@ const Joi = require('joi')
 const mongoose = require('mongoose')
 const { genreSchema } = require('./genre')
 
+/* Movie model can be created as the way genre has created  */
 const Movie = mongoose.model(
 	'Movies',
 	new mongoose.Schema({
