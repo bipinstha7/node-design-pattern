@@ -11,7 +11,7 @@ module.exports = app => {
 	app.use(express.json())
 	app.use('/api/genres', genres)
 	app.use('/api/customers', customers)
-	app.use('/api/movie', movie)
+	app.use('/api/movies', movie)
 	app.use('/api/rentals', rentals)
 	app.use('/api/users', users)
 	app.use('/api/auth', auth)
